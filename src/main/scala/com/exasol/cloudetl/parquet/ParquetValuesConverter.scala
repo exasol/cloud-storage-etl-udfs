@@ -12,7 +12,7 @@ import org.apache.parquet.schema.Type.Repetition
  */
 final case class ParquetValueConverter(schema: MessageType) extends ValueConverter {
 
-  override def convert(values: Iterator[Row]): Iterator[Row] =
+  override def convert(values: Seq[Row]): Seq[Row] =
     values.map(row => Row(mapComplexValuesToJSON(row.getValues())))
 
   private[this] def mapComplexValuesToJSON(values: Seq[Any]): Seq[Any] =

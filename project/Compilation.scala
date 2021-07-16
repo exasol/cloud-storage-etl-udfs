@@ -116,7 +116,8 @@ object Compilation {
     Wart.Overloading,
     Wart.Throw,
     Wart.Var,
-    Wart.While
+    Wart.While,
+    Wart.DefaultArguments
   )
 
   val WartremoverTestFlags: Seq[Wart] = ExtraWartremoverFlags ++ Warts.allBut(

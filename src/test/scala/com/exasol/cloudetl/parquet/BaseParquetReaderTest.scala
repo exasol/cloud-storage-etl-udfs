@@ -46,7 +46,7 @@ trait BaseParquetReaderTest
   }
 
   protected final def getRecords(): Seq[Row] =
-    ParquetSource(path, conf, fileSystem).streamWithValueConverter().toSeq
+    ParquetSource(path, conf, fileSystem).streamWithValueConverter()
 
   protected final def getParquetWriter(
     schema: MessageType,

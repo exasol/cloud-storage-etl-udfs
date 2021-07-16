@@ -15,10 +15,6 @@ addSbtPlugin("org.wartremover" % "sbt-wartremover-contrib" % "1.3.12")
 // https://github.com/sbt/sbt-assembly
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "1.0.0")
 
-// Adds most common doc api mappings
-// https://github.com/ThoughtWorksInc/sbt-api-mappings
-addSbtPlugin("com.thoughtworks.sbt-api-mappings" % "sbt-api-mappings" % "3.0.0")
-
 // Adds Scala Code Coverage (Scoverage) used during unit tests
 // http://github.com/scoverage/sbt-scoverage
 addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.8.2")
@@ -40,10 +36,6 @@ addSbtPlugin("org.scalastyle" % "scalastyle-sbt-plugin" % "1.0.0")
 // Adds a `dependencyUpdates` task to check for dependency updates
 // https://github.com/jrudolph/sbt-dependency-graph
 addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.10.0-RC1")
-
-// Adds a `sbt-explicit-dependencies` plugin
-// https://github.com/cb372/sbt-explicit-dependencies
-addSbtPlugin("com.github.cb372" % "sbt-explicit-dependencies" % "0.2.16")
 
 // Adds a `sbt-reproducible-builds` plugin
 // https://github.com/raboof/sbt-reproducible-builds

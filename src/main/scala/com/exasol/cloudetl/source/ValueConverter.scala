@@ -13,6 +13,6 @@ trait ValueConverter {
    * @param values iterator of rows
    * @return transformed iterator
    */
-  def convert(values: Iterator[Row]): Iterator[Row]
+  def convert(values: Seq[Row]): Seq[Row]
 
 }

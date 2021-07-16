@@ -17,6 +17,9 @@ class StorageProperties(
 
   import StorageProperties._
 
+  private[this] val DEFAULT_CHUNK_SIZE = 10000
+  private[this] val DEFAULT_BUFFER_SIZE = 256
+
   /**
    * Returns the storage path.
    *
@@ -58,6 +61,12 @@ class StorageProperties(
   /** Returns the [[FileFormat]] file format. */
   final def getFileFormat(): FileFormat =
     FileFormat(getString(DATA_FORMAT))
+
+  /** Returns a chunk size for grouping records. */
+  final def getChunkSize(): Int = get(CHUNK_SIZE).fold(DEFAULT_CHUNK_SIZE)(_.toInt)
+
+  /** Returns a buffer size used between reading and emitting. */
+  final def getBufferSize(): Int = get(BUFFER_SIZE).fold(DEFAULT_BUFFER_SIZE)(_.toInt)
 
   /**
    * Returns the number of partitions provided as user property.
@@ -102,16 +111,22 @@ class StorageProperties(
 object StorageProperties extends CommonProperties {
 
   /** A required property key name for a bucket path. */
-  private[storage] final val BUCKET_PATH: String = "BUCKET_PATH"
+  private[storage] val BUCKET_PATH = "BUCKET_PATH"
 
   /** A required property key name for a data format. */
-  private[storage] final val DATA_FORMAT: String = "DATA_FORMAT"
+  private[storage] val DATA_FORMAT = "DATA_FORMAT"
 
   /** An optional property key name for the parallelism. */
-  private[storage] final val PARALLELISM: String = "PARALLELISM"
+  private[storage] val PARALLELISM = "PARALLELISM"
 
   /** An optional property key name for the overwite. */
-  private[storage] final val OVERWRITE: String = "OVERWRITE"
+  private[storage] val OVERWRITE = "OVERWRITE"
+
+  /** An optional property key name for size of grouping records read from a file */
+  private[storage] val CHUNK_SIZE = "CHUNK_SIZE"
+
+  /** An optional property key name for size of asynchronous boundary size. */
+  private[storage] val BUFFER_SIZE = "BUFFER_SIZE"
 
   /**
    * Returns [[StorageProperties]] from key values map and

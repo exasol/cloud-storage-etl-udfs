@@ -1,7 +1,6 @@
 package com.exasol.cloudetl.data
 
 /** An Exasol table column information */
-@SuppressWarnings(Array("org.wartremover.warts.DefaultArguments"))
 final case class ExaColumnInfo(
   name: String,
   `type`: Class[_],

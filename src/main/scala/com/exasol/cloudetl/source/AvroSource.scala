@@ -37,7 +37,7 @@ final case class AvroSource(
    * For now Avro values do not require additional transformation.
    */
   override def getValueConverter(): ValueConverter = new ValueConverter {
-    override def convert(rows: Iterator[Row]) = rows
+    override def convert(rows: Seq[Row]) = rows
   }
 
   private[this] def createReader(): DataFileReader[GenericRecord] =

@@ -11,6 +11,7 @@ Code name:
 ## Refactoring
 
 * #150: Added extracted parquet-io-java library
+* #155: Refactored to decouple reading and emitting Parquet files
 * #157: Refactored build setup
 
 ## Dependency Updates
@@ -23,6 +24,9 @@ Code name:
 * Added `org.apache.commons:commons-lang3:3.12.0`
 * Added `org.slf4j:slf4j-log4j12:1.7.31`
 * Added `org.apache.hadoop:hadoop-common:3.3.1`
+* Added `com.typesafe.akka:akka-stream:2.6.15`
+* Added `net.ruippeixotog:akka-stream-mon:0.1.0`
+
 * Removed `org.apache.hadoop:hadoop-client:3.3.1`
 * Removed `org.apache.parquet:parquet-hadoop:1.12.0`
 * Updated `org.apache.orc:orc-core:1.6.8` to `1.6.9`
@@ -40,3 +44,5 @@ Code name:
 * Updated `net.bzzt:sbt-reproducible-builds:0.25` to `0.28`
 * Removed `com.lucidchart:sbt-scalafmt-coursier:1.16`
 * Removed `com.typesafe.sbt:sbt-git:1.0.1`
+* Removed `com.github.cb372:sbt-explicit-dependencies:0.2.16`
+* Removed `com.thoughtworks.sbt-api-mappings:sbt-api-mappings:3.0.0`

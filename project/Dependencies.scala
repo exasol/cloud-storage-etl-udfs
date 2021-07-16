@@ -15,6 +15,8 @@ object Dependencies {
   private val GoogleStorageVersion = "1.9.4-hadoop3"
   private val SparkSQLVersion = "3.0.1"
   private val AlluxioCoreHDFSVersion = "2.6.0"
+  private val AkkaStreamVersion = "2.6.15"
+  private val AkkaStreamMonVersion = "0.1.0"
 
   // Test dependencies versions
   private val ScalaTestVersion = "3.2.9"
@@ -114,6 +116,8 @@ object Dependencies {
         ExclusionRule(organization = "org.apache.curator"),
         ExclusionRule(organization = "org.apache.zookeeper")
       ),
+    "com.typesafe.akka" %% "akka-stream" % AkkaStreamVersion,
+    "net.ruippeixotog" %% "akka-stream-mon" % AkkaStreamMonVersion,
     // Logging Dependencies
     "org.slf4j" % "slf4j-log4j12" % "1.7.31",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.4"

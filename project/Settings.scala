@@ -79,10 +79,12 @@ object Settings {
       {
         case "META-INF/services/io.grpc.LoadBalancerProvider" => MergeStrategy.concat
         case "META-INF/services/io.grpc.NameResolverProvider" => MergeStrategy.concat
+        case "reference.conf"                                 => MergeStrategy.concat
         case "log4j.properties"                               => MergeStrategy.last
         case x if x.endsWith("reflection-config.json")        => MergeStrategy.rename
         case x if x.endsWith(".txt")                          => MergeStrategy.rename
         case x if x.endsWith(".properties")                   => MergeStrategy.filterDistinctLines
+        case s if s.endsWith(".proto")                        => MergeStrategy.last
         case x if x.endsWith(".class")                        => MergeStrategy.last
         case x                                                => defaultStrategy(x)
       }
